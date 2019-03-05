@@ -19,7 +19,8 @@ import ballerina/test;
 import ballerina/io;
 
 Configuration config = {
-    key: config:getAsString("KEY")
+    key: config:getAsString("KEY"),
+    region: "eastus"
 };
 
 Client cvClient = new(config);

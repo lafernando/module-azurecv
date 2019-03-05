@@ -15,7 +15,8 @@ import ballerina/io;
 import wso2/azurecv;
 
 azurecv:Configuration config = {
-    key: config:getAsString("KEY")
+    key: config:getAsString("KEY"),
+    region: "eastus"
 };
 
 azurecv:Client cvClient = new(config);
