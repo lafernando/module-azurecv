@@ -18,25 +18,27 @@ import ballerina/http;
 import ballerina/io;
 
 # Object to initialize the connection with Azure CV Service.
-#
-# + key - The Azure CV subscription key
 public type Client client object {
 
-    public string key;
+    string key;
+    string region;
+    http:Client clientEP;
 
     public function __init(Configuration config) {
         self.key = config.key;
+        self.region = config.region;
+        self.clientEP = new("https://" + self.region + ".api.cognitive.microsoft.com/vision/v2.0");
     }
 
-    # Applies Optical Character Recognition (OCR) for the given URL or the image data
+    # Applies Optical Character Recognition (OCR) for the given URL or the image data.
+    # 
     # + input - The input value, either a string value, which is an URL, or else, image payload as a byte[]
     # + return - If successful, returns a `string` with the text, else returns an `error` value
     public remote function ocr(string|byte[] input) returns string|error;
 
 };
 
-remote function Client.ocr(string|byte[] input) returns string|error {
-    http:Client clientEP = new(AZURE_CV_BASE_URL);
+public remote function Client.ocr(string|byte[] input) returns string|error {
     http:Request req = new;
     req.setHeader("Ocp-Apim-Subscription-Key", self.key);
     if (input is string) {
@@ -44,7 +46,7 @@ remote function Client.ocr(string|byte[] input) returns string|error {
     } else {
         req.setBinaryPayload(input);
     }
-    var resp = clientEP->post("/ocr?language=unk&detectOrientation=true", req);
+    var resp = self.clientEP->post("/ocr?language=unk&detectOrientation=true", req);
     if (resp is http:Response) {
         string text = "";
         json result = check resp.getJsonPayload();

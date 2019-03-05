@@ -14,4 +14,4 @@
 // specific language governing permissions and limitations
 // under the License.
 
-public const AZURE_CV_BASE_URL = "https://westcentralus.api.cognitive.microsoft.com/vision/v2.0";
+public const AZURE_DEFAULT_REGION = "eastus";
