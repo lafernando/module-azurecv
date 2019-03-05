@@ -5,7 +5,7 @@ Connects to Azure CV service through Ballerina.
 ## Compatibility
 | Ballerina Language Version 
 | -------------------------- 
-| 0.990.0                    
+| 0.993.0                    
 
 ## Sample
 
