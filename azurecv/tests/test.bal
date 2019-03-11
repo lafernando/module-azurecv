@@ -14,12 +14,12 @@
 // specific language governing permissions and limitations
 // under the License.
 
-import ballerina/config;
+import ballerina/system;
 import ballerina/test;
 import ballerina/io;
 
 Configuration config = {
-    key: config:getAsString("KEY"),
+    key: system:getEnv("AZURE_CV_KEY"),
     region: "eastus"
 };
 
