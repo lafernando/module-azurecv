@@ -1,6 +1,6 @@
 [project]
 org-name = "wso2"
-version = "0.1.7"
+version = "0.1.8"
 authors = ["WSO2"]
 keywords = ["azure", "cv", "computervision", "vision", "ocr"]
 repository = "https://github.com/lafernando/module-azurecv"
