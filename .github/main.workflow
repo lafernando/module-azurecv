@@ -1,6 +1,6 @@
 workflow "Build and Deploy" {
   on = "push"
-  resolves = ["lafernando/github-actions/cli/latest@master"]
+  resolves = ["ballerina-platform/github-actions/cli/latest@master"]
 }
 
 action "ballerina-platform/github-actions/cli/latest@master" {
