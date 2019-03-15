@@ -9,6 +9,5 @@ action "ballerina-platform/github-actions/cli/latest@master" {
   secrets = [
     "BALLERINA_CENTRAL_ACCESS_TOKEN",
     "AZURE_CV_KEY",
-    "GITHUB_TOKEN",
   ]
 }
