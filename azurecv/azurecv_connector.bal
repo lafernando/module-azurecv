@@ -50,8 +50,9 @@ public remote function Client.ocr(string|byte[] input) returns string|error {
     if (resp is http:Response) {
         string text = "";
         json result = check resp.getJsonPayload();
+        io:println(result);
         if (result.regions is ()) {
-            error err = error(<string> result.code, { message: <string> result.message });
+            error err = error("ocr error", { message: (result.message == () ? "" : <string> result.message) });
             return untaint err;
         }
         int regionCount = result.regions.length();
