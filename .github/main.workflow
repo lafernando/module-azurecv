@@ -6,7 +6,5 @@ workflow "Build and Deploy" {
 action "ballerina-platform/github-actions/cli/latest@master" {
   uses = "lafernando/github-actions/cli/latest@master"
   args = "push"
-  secrets = [
-    "BALLERINA_CENTRAL_ACCESS_TOKEN",
-  ]
+  secrets = ["AZURE_CV_KEY", "BALLERINA_CENTRAL_ACCESS_TOKEN"]
 }
