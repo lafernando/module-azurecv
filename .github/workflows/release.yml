@@ -13,6 +13,6 @@ jobs:
       uses: ballerina-platform/ballerina-action/@1.1.1
       with:
         env: 
-          BALLERINA_CENTRAL_ACCESS_TOKEN = ${{ secrets.BallerinaToken }}
+          BALLERINA_CENTRAL_ACCESS_TOKEN = ${{ secrets.BALLERINA_CENTRAL_ACCESS_TOKEN	}}
         args: 
           push 
