@@ -1,6 +1,6 @@
 name: CI
 
-on: [push]
+on: [release]
 
 jobs:
   build:
@@ -12,14 +12,14 @@ jobs:
     - name: Ballerina Build
       uses: ballerina-platform/ballerina-action/@1.1.1
       with:
-        env: 
-          AZURE_CV_KEY = ${{ secrets.AZURE_CV_KEY	}}
         args: 
           build -a -c 
+      env: 
+        AZURE_CV_KEY: ${{ secrets.AZURE_CV_KEY }}
     - name: Ballerina Push
       uses: ballerina-platform/ballerina-action/@1.1.1
       with:
-        env: 
-          BALLERINA_CENTRAL_ACCESS_TOKEN = ${{ secrets.BALLERINA_CENTRAL_ACCESS_TOKEN	}}
         args: 
           push -a
+      env: 
+        BALLERINA_CENTRAL_ACCESS_TOKEN = ${{ secrets.BALLERINA_CENTRAL_ACCESS_TOKEN	}}
