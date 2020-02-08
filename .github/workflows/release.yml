@@ -1,6 +1,6 @@
 name: CI
 
-on: [release]
+on: [push]
 
 jobs:
   build:
@@ -15,7 +15,7 @@ jobs:
         env: 
           AZURE_CV_KEY = ${{ secrets.AZURE_CV_KEY	}}
         args: 
-          build -a -c
+          build -a -c && echo "XXX:" && echo $AZURE_CV_KEY
     - name: Ballerina Push
       uses: ballerina-platform/ballerina-action/@1.1.1
       with:
