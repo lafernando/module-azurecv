@@ -13,6 +13,6 @@ jobs:
       uses: ballerina-platform/ballerina-action/@master
       with:
         args: 
-          build -a -c 
+          build -a -c
       env: 
         AZURE_CV_KEY: ${{ secrets.AZURE_CV_KEY }}
