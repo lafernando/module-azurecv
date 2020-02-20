@@ -9,6 +9,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - run: mvn clean install    
     - name: Ballerina Build
       uses: ballerina-platform/ballerina-action/@1.1.1
       with:
