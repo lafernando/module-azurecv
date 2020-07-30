@@ -5,8 +5,7 @@ This connector allows to use the Azure CV service through Ballerina. The followi
 ## Compatibility
 | Ballerina Language Version 
 | -------------------------- 
-| 1.1.x                    
-
+| 1.2.x
 
 The following sections provide you with information on how to use the Azure CV Service Connector.
 
