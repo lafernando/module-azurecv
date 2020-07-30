@@ -10,14 +10,14 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Ballerina Build
-      uses: ballerina-platform/ballerina-action/@1.1.1
+      uses: ballerina-platform/ballerina-action/@master
       with:
         args: 
           build -a -c 
       env: 
         AZURE_CV_KEY: ${{ secrets.AZURE_CV_KEY }}
     - name: Ballerina Push
-      uses: ballerina-platform/ballerina-action/@1.1.1
+      uses: ballerina-platform/ballerina-action/@master
       with:
         args: 
           push -a
